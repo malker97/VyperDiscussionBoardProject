@@ -1,7 +1,7 @@
 /* ================================================================================*/
 /* Javascript code for Guestbook DApp
 /* ================================================================================*/
-
+// 这部分是用来检测Metamask作为ETH钱包是否被启动了的
 /* Check if Metamask is installed. */
 if (typeof window.ethereum !== 'undefined') {
     console.log('MetaMask is installed!');
@@ -17,9 +17,11 @@ window.ethereum.enable();
 /* Grab ABI from compiled contract (e.g. in Remix) and fill it in.
  * Grab address of contract on the blockchain and fill it in.
  * Use the web3 client to instantiate the contract within program */
-var GuestbookABI = <FMI>;
 
-var Guestbook = new web3.eth.Contract(GuestbookABI,'<FMI>');
+// 这里是用来存储ABI的
+var GuestbookABI = [{"outputs":[],"inputs":[{"type":"address","name":"owneraddr"}],"stateMutability":"nonpayable","type":"constructor"},{"name":"sign","outputs":[],"inputs":[{"type":"string","name":"name"},{"type":"string","name":"email"},{"type":"string","name":"text"}],"stateMutability":"payable","type":"function","gas":1589692},{"name":"contractOwner","outputs":[{"type":"address","name":""}],"inputs":[],"stateMutability":"view","type":"function","gas":1181},{"name":"messages","outputs":[{"type":"address","name":"useraddr"},{"type":"string","name":"textmsg"},{"type":"bool","name":"viewable"},{"type":"uint256","name":"update"}],"inputs":[{"type":"uint256","name":"arg0"}],"stateMutability":"view","type":"function","gas":40284},{"name":"users","outputs":[{"type":"address","name":"addr"},{"type":"string","name":"name"},{"type":"string","name":"email"},{"type":"uint256","name":"lastupdate"},{"type":"bool","name":"viewable"}],"inputs":[{"type":"address","name":"arg0"}],"stateMutability":"view","type":"function","gas":16571},{"name":"expirtime","outputs":[{"type":"uint256","name":""}],"inputs":[],"stateMutability":"view","type":"function","gas":1271},{"name":"totalEth","outputs":[{"type":"uint256","name":""}],"inputs":[],"stateMutability":"view","type":"function","gas":1301},{"name":"contractopen","outputs":[{"type":"bool","name":""}],"inputs":[],"stateMutability":"view","type":"function","gas":1331},{"name":"sizeofmsgs","outputs":[{"type":"uint256","name":""}],"inputs":[],"stateMutability":"view","type":"function","gas":1361}];
+// 这里是用来存储协议的存储地址的
+var Guestbook = new web3.eth.Contract(GuestbookABI,'0x8fd4cf0DBFcAa88c2bF40eB3195a34A6619179fa');
 
 /* ================================================================================*/
 /* Update the UI with current wallet account address when called */

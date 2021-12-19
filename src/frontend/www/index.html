@@ -1,15 +1,19 @@
 <!doctype html>
 <html>
   <head>
-    <title>My Visitors</title>
+    <title>Hello</title>
     <link rel=stylesheet type="text/css" href="style.css">
   </head>
   <body>
     <div class=page>
-    <h2>Guestbook</h2>
-      <div>Bounty: <span id="bounty"></span></div>
+    <h2>Malker's Discussion Board</h2>
       <div>Account: <span id="account"></span></div>
       <div>
+          <div>
+            <label for="bid">Bid: </label>
+            <input id='bid' type='number' name='bid'>
+            <label>Wei</label`>
+          </div>
           <div>
             <label for="name">Name: </label>
             <input id='name' type='text' name='name'>
@@ -29,11 +33,11 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script type="text/javascript" src="guestbook.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       updateBounty();
       updateAccount();
       updateEntries();
-    </script>
+    </script> -->
     </div>
   </body>
 </html>

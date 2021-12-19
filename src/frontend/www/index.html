@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Visitors</title>
+    <link rel=stylesheet type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class=page>
+    <h2>Guestbook</h2>
+      <div>Bounty: <span id="bounty"></span></div>
+      <div>Account: <span id="account"></span></div>
+      <div>
+          <div>
+            <label for="name">Name: </label>
+            <input id='name' type='text' name='name'>
+          </div>
+          <div>
+            <label for="email">Email: </label>
+            <input id='email' type='text' name='email'>
+          </div>
+          <div>
+            <label for="message">Message: </label><br>
+            <textarea id="message" rows=2 cols=50 name="message"></textarea>
+          </div>
+          <button id="sign">Sign</button>
+      </div>
+    <h2>Entries</h2>
+      <div id="entries"></div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="text/javascript" src="guestbook.js"></script>
+    <script type="text/javascript">
+      updateBounty();
+      updateAccount();
+      updateEntries();
+    </script>
+    </div>
+  </body>
+</html>
